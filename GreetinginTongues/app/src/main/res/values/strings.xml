@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Greeting in Tongues :P</string>
+
+    <string name="EN">English</string>
+    <string name="ENT">Hello world!</string>
+    <string name="ES">Spanish</string>
+    <string name="EST">Hola mundo!</string>
+    <string name="IT">Italian</string>
+    <string name="ITT">Ciao mondo!</string>
+    <string name="SR">Serbian</string>
+    <string name="SRT">Здраво Свете!</string>
+    <string name="TR">Turkish</string>
+    <string name="TRT">Merhaba Dünya!</string>
+    <string name="ZH">Chinese</string>
+    <string name="ZHT">你好世界!</string>
+    <string name="CS">Czech</string>
+    <string name="CST">Ahoj světe!</string>
+    <string name="EO">Esperanto</string>
+    <string name="EOT">Saluton mondo!</string>
+    <string name="FR">French</string>
+    <string name="FRT">Bonjour le monde!</string>
+    <string name="DE">German</string>
+    <string name="DET">Hallo Welt!</string>
+    <string name="SV">Swedish</string>
+    <string name="SVT">Hej världen!</string>
+    <string name="ZU">Zulu</string>
+    <string name="ZUT">Sawubona Mhlaba!</string>
+    <string name="JI">Yiddish</string>
+    <string name="JIT">העלא וועלט!</string>
+    <string name="RU">Russian</string>
+    <string name="RUT">Привет, мир!</string>
+    <string name="JA">Japanese</string>
+    <string name="JAT">こんにちは世界!</string>
+
+    <string name="EXIT">Goodbye!</string>
+</resources>
