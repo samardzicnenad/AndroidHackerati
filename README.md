@@ -1,5 +1,5 @@
 # Android Hackerati
-The Hackerati Android course
+<b>The Hackerati Android course</b>
 
 <b>01) Greeting in Tongues</b> - My first android app (advanced version of traditional 'Hello world!')
 
