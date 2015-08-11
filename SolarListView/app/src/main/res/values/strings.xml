@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">SolarListView</string>
+    <string-array name="celestial_bodies_array">
+        <item>sun</item>
+        <item>mercury</item>
+        <item>venus</item>
+        <item>earth</item>
+        <item>moon</item>
+        <item>mars</item>
+        <item>phobos</item>
+        <item>deimos</item>
+        <item>jupiter</item>
+        <item>europa</item>
+        <item>ganymede</item>
+        <item>io</item>
+        <item>callisto</item>
+        <item>saturn</item>
+        <item>mimas</item>
+        <item>enceladus</item>
+        <item>tethys</item>
+        <item>dione</item>
+        <item>rhea</item>
+        <item>titan</item>
+        <item>iapetus</item>
+        <item>uranus</item>
+        <item>miranda</item>
+        <item>ariel</item>
+        <item>umbriel</item>
+        <item>titania</item>
+        <item>oberon</item>
+        <item>neptune</item>
+        <item>triton</item>
+        <item>pluto</item>
+        <item>charon</item>
+    </string-array>
+</resources>
