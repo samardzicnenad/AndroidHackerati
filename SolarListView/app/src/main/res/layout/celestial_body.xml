@@ -15,5 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:background="@drawable/iv_background"
         android:layout_centerVertical="true" />
 </RelativeLayout>
