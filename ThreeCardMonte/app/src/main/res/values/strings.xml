@@ -3,4 +3,5 @@
     <string name="caption">Queen of Spades wins!</string>
     <string name="shuffle">Shuffle cards</string>
     <string name="card_face">Card Face</string>
+    <string name="shuffle_message">Shuffling cards...</string>
 </resources>
