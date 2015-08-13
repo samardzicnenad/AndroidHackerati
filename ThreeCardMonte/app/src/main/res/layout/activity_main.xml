@@ -27,6 +27,7 @@
         android:id="@+id/bottomLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="2dp">
 
@@ -34,10 +35,20 @@
             android:id="@+id/shuffle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:background="#ff2c4cff"
             android:text="@string/shuffle"
             android:textStyle="bold"
             android:textColor="#ffffffff" />
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="#ee262f"
+            android:textColor="#ffffffff"
+            android:text="@string/exit"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
