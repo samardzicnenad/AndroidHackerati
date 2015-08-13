@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Greeting in Tongues :P</string>
+    <string name="app_name">Greeting in Tongues</string>
 
     <string name="EN">English</string>
     <string name="ENT">Hello world!</string>
