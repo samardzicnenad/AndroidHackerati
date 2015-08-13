@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SolarListView</string>
+    <string name="app_name">Solar ListView</string>
     <string-array name="celestial_bodies_array">
         <item>sun</item>
         <item>mercury</item>
