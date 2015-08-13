@@ -12,11 +12,25 @@ import android.widget.TextView;
 
 import com.thehackerati.solarlistview.R;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 public class CelestialAdapter extends BaseAdapter {
     private Context context;
+    private HashMap<String, ArrayList<String>> mapPlanetMoons = new HashMap<String, ArrayList<String>>() {{
+        put("sun", new ArrayList<String>() {{}});
+        put("mercury", new ArrayList<String>() {{}});
+        put("venus", new ArrayList<String>() {{}});
+        put("earth", new ArrayList<String>() {{add("moon");}});
+        put("mars", new ArrayList<String>() {{add("phobos"); add("deimos");}});
+        put("jupiter", new ArrayList<String>() {{add("europa"); add("ganymede"); add("io"); add("callisto");}});
+        put("saturn", new ArrayList<String>() {{add("mimas"); add("enceladus"); add("tethys"); add("dione"); add("rhea"); add("titan"); add("iapetus");}});
+        put("uranus", new ArrayList<String>() {{add("miranda"); add("ariel"); add("umbriel"); add("titania"); add("oberon");}});
+        put("neptune", new ArrayList<String>() {{add("triton");}});
+        put("pluto", new ArrayList<String>() {{add("charon");}});
+    }};
 
     private final List<String> celestialBodies;
 
