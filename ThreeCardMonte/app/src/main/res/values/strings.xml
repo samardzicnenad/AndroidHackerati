@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Three Card Monte</string>
+    <string name="card_face">Card Face</string>
     <string name="caption">Queen of Spades wins!</string>
     <string name="shuffle">Shuffle cards</string>
-    <string name="card_face">Card Face</string>
+    <string name="exit">Goodbye!</string>
+    <string name="shuffle_message">shuffling cards...</string>
 </resources>

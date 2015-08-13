@@ -28,7 +28,6 @@ public class CardFace extends Activity {
         cardFace = (ImageView) findViewById(R.id.iv_card_face);
         message = (TextView) findViewById(R.id.tv_message);
 
-
         switch (requestCode) {
             case 12:
                 cardFace.setImageResource(R.drawable.jack);

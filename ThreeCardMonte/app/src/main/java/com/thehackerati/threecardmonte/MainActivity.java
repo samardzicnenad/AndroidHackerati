@@ -2,10 +2,14 @@ package com.thehackerati.threecardmonte;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,7 +27,7 @@ public class MainActivity extends Activity {
     private ImageButton btnCard1,
             btnCard2,
             btnCard3;
-    private Button btnShuffle;
+    private Button btnShuffle, btnExit;
 
     private Integer[] cards = new Integer[] {KING_OF_HEARTS, JACK_OF_DIAMONDS, QUEEN_OF_SPADES};
 
@@ -31,10 +35,6 @@ public class MainActivity extends Activity {
     private void randomizeCards() {
         cardList = Arrays.asList(cards);
         Collections.shuffle(cardList);
-        // Prints out the random order of cards
-        //for (int i=0;i<cardList.size();i++) {
-        //    System.out.println(cardList.get(i));
-        //}
     }
 
     @Override
@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
         btnCard2 = (ImageButton) findViewById(R.id.card2);
         btnCard3 = (ImageButton) findViewById(R.id.card3);
         btnShuffle = (Button) findViewById(R.id.shuffle);
+        btnExit = (Button) findViewById(R.id.exit);
 
         // Shuffle the cards in the beginning
         randomizeCards();
@@ -74,6 +75,17 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 randomizeCards();
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.shuffle_message, Toast.LENGTH_SHORT);
+                TextView tvToast = (TextView) toast.getView().findViewById(android.R.id.message);
+                tvToast.setTextColor(Color.YELLOW);
+                toast.setGravity(Gravity.CENTER, 0, -120);
+                toast.show();
+            }
+        });
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
