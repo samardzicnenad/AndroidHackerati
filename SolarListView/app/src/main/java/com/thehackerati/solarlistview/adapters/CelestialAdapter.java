@@ -12,31 +12,42 @@ import android.widget.TextView;
 
 import com.thehackerati.solarlistview.R;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 public class CelestialAdapter extends BaseAdapter {
+
     private Context context;
-    private HashMap<String, ArrayList<String>> mapPlanetMoons = new HashMap<String, ArrayList<String>>() {{
-        put("sun", new ArrayList<String>() {{}});
-        put("mercury", new ArrayList<String>() {{}});
-        put("venus", new ArrayList<String>() {{}});
-        put("earth", new ArrayList<String>() {{add("moon");}});
-        put("mars", new ArrayList<String>() {{add("phobos"); add("deimos");}});
-        put("jupiter", new ArrayList<String>() {{add("europa"); add("ganymede"); add("io"); add("callisto");}});
-        put("saturn", new ArrayList<String>() {{add("mimas"); add("enceladus"); add("tethys"); add("dione"); add("rhea"); add("titan"); add("iapetus");}});
-        put("uranus", new ArrayList<String>() {{add("miranda"); add("ariel"); add("umbriel"); add("titania"); add("oberon");}});
-        put("neptune", new ArrayList<String>() {{add("triton");}});
-        put("pluto", new ArrayList<String>() {{add("charon");}});
-    }};
-
     private final List<String> celestialBodies;
+    private final HashMap<String, String> mapPlanetMoons;
+    private final HashMap<String, Integer> mapPlanetColor = new HashMap<String, Integer>();
 
-    public CelestialAdapter(List<String> celestialBodies, Context current) {
+    // set a random color for a planet (and its moons)
+    private void setColors() {
+        Random random = new Random();
+        Integer planetColor;
+        // iterate all of the celestial bodies
+        for (String cBody: celestialBodies) {
+            // look for the body in the list of the moons
+            String moon = mapPlanetMoons.get(cBody);
+            // if not a moon - set a color to the celestial body
+            if (moon == null) {
+                planetColor = Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
+                mapPlanetColor.put(cBody, planetColor);
+            }
+        }
+    }
+
+    // class constructor
+    public CelestialAdapter(List<String> celestialBodies,
+                            HashMap<String, String> mapPlanetMoons,
+                            Context currentContext) {
         this.celestialBodies = celestialBodies;
-        this.context = current;
+        this.mapPlanetMoons = mapPlanetMoons;
+        this.context = currentContext;
+
+        setColors();
     }
 
     @Override
@@ -56,19 +67,35 @@ public class CelestialAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.celestial_body, parent, false);
+
+        String parentPlanet;
+
+        if(convertView == null) {
+            convertView = LayoutInflater
+                    .from(parent.getContext())
+                    .inflate(R.layout.celestial_body, parent, false);
+        }
+
+        // set TextView part of the layout
         TextView celestialTextView = (TextView) convertView.findViewById(R.id.celestialBodyName);
         String celestialName = celestialBodies.get(position);
         celestialTextView.setText(celestialName.toUpperCase());
         celestialTextView.setTextColor(Color.WHITE);
         celestialTextView.setTypeface(null, Typeface.BOLD_ITALIC);
 
-        Random random = new Random();
+        // set padding and the background color for the view
+        if (mapPlanetMoons.containsKey(celestialName)) {
+            // if it is a moon - indent more and get the color from the planet
+            celestialTextView.setPadding(100, 0, 0, 0);
+            parentPlanet = mapPlanetMoons.get(celestialName);
+            convertView.setBackgroundColor(mapPlanetColor.get(parentPlanet));
+        } else {
+            // indent less and get the planet's color
+            celestialTextView.setPadding(30, 0, 0, 0);
+            convertView.setBackgroundColor(mapPlanetColor.get(celestialName));
+        }
 
-        convertView.setBackgroundColor(Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256)));
-
+        // set a source for the ImageView
         ImageView celestialImageView = (ImageView) convertView.findViewById(R.id.celestialBodyIcon);
         int resID = context.getResources().getIdentifier(celestialName, "drawable", "com.thehackerati.solarlistview");
         celestialImageView.setImageResource(resID);

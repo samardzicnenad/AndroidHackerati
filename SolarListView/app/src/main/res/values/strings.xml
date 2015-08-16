@@ -1,69 +1,71 @@
 <resources>
     <string name="app_name">Solar ListView</string>
-    <string-array name="celestial_bodies_array">
+    <string-array name="sun_planets">
         <item>sun</item>
         <item>mercury</item>
         <item>venus</item>
         <item>earth</item>
-        <item>moon</item>
         <item>mars</item>
-        <item>phobos</item>
-        <item>deimos</item>
         <item>jupiter</item>
-        <item>europa</item>
-        <item>ganymede</item>
-        <item>io</item>
-        <item>callisto</item>
         <item>saturn</item>
-        <item>mimas</item>
-        <item>enceladus</item>
-        <item>tethys</item>
-        <item>dione</item>
-        <item>rhea</item>
-        <item>titan</item>
-        <item>iapetus</item>
         <item>uranus</item>
-        <item>miranda</item>
-        <item>ariel</item>
-        <item>umbriel</item>
-        <item>titania</item>
-        <item>oberon</item>
         <item>neptune</item>
-        <item>triton</item>
         <item>pluto</item>
-        <item>charon</item>
+    </string-array>
+    <string-array name="moon_planet">
+        <item>moon|earth</item>
+        <item>phobos|mars</item>
+        <item>deimos|mars</item>
+        <item>europa|jupiter</item>
+        <item>ganymede|jupiter</item>
+        <item>io|jupiter</item>
+        <item>callisto|jupiter</item>
+        <item>mimas|saturn</item>
+        <item>enceladus|saturn</item>
+        <item>tethys|saturn</item>
+        <item>dione|saturn</item>
+        <item>rhea|saturn</item>
+        <item>titan|saturn</item>
+        <item>iapetus|saturn</item>
+        <item>miranda|uranus</item>
+        <item>ariel|uranus</item>
+        <item>umbriel|uranus</item>
+        <item>titania|uranus</item>
+        <item>oberon|uranus</item>
+        <item>triton|neptune</item>
+        <item>charon|pluto</item>
     </string-array>
     <string-array name="celestial_bodies_links">
-        <item>http://www.seasky.org/solar-system/sun.html</item>
-        <item>http://www.seasky.org/solar-system/mercury.html</item>
-        <item>http://www.seasky.org/solar-system/venus.html</item>
-        <item>http://www.seasky.org/solar-system/earth.html</item>
-        <item>http://www.seasky.org/solar-system/earth-moon.html</item>
-        <item>http://www.seasky.org/solar-system/mars.html</item>
-        <item>http://www.seasky.org/solar-system/mars-phobos.html</item>
-        <item>http://www.seasky.org/solar-system/mars-deimos.html</item>
-        <item>http://www.seasky.org/solar-system/jupiter.html</item>
-        <item>http://www.seasky.org/solar-system/jupiter-europa.html</item>
-        <item>http://www.seasky.org/solar-system/jupiter-ganymede.html</item>
-        <item>http://www.seasky.org/solar-system/jupiter-io.html</item>
-        <item>http://www.seasky.org/solar-system/jupiter-callisto.html</item>
-        <item>http://www.seasky.org/solar-system/saturn.html</item>
-        <item>http://www.seasky.org/solar-system/saturn-mimas.html</item>
-        <item>http://www.seasky.org/solar-system/saturn-enceladus.html</item>
-        <item>http://www.seasky.org/solar-system/saturn-tethys.html</item>
-        <item>http://www.seasky.org/solar-system/saturn-dione.html</item>
-        <item>http://www.seasky.org/solar-system/saturn-rhea.htmlm</item>
-        <item>http://www.seasky.org/solar-system/saturn-titan.html</item>
-        <item>http://www.seasky.org/solar-system/saturn-iapetus.html</item>
-        <item>http://www.seasky.org/solar-system/uranus.html</item>
-        <item>http://www.seasky.org/solar-system/uranus-miranda.html</item>
-        <item>http://www.seasky.org/solar-system/uranus-ariel.html</item>
-        <item>http://www.seasky.org/solar-system/uranus-umbriel.html</item>
-        <item>http://www.seasky.org/solar-system/uranus-titania.html</item>
-        <item>http://www.seasky.org/solar-system/uranus-oberon.html</item>
-        <item>http://www.seasky.org/solar-system/neptune.html</item>
-        <item>http://www.seasky.org/solar-system/neptune-triton.html</item>
-        <item>http://www.seasky.org/solar-system/pluto-charon.html</item>
-        <item>http://www.seasky.org/solar-system/pluto-charon.html</item>
+        <item>sun|http://www.seasky.org/solar-system/sun.html</item>
+        <item>mercury|http://www.seasky.org/solar-system/mercury.html</item>
+        <item>venus|http://www.seasky.org/solar-system/venus.html</item>
+        <item>earth|http://www.seasky.org/solar-system/earth.html</item>
+        <item>moon|http://www.seasky.org/solar-system/earth-moon.html</item>
+        <item>mars|http://www.seasky.org/solar-system/mars.html</item>
+        <item>phobos|http://www.seasky.org/solar-system/mars-phobos.html</item>
+        <item>deimos|http://www.seasky.org/solar-system/mars-deimos.html</item>
+        <item>jupiter|http://www.seasky.org/solar-system/jupiter.html</item>
+        <item>europa|http://www.seasky.org/solar-system/jupiter-europa.html</item>
+        <item>ganymede|http://www.seasky.org/solar-system/jupiter-ganymede.html</item>
+        <item>io|http://www.seasky.org/solar-system/jupiter-io.html</item>
+        <item>callisto|http://www.seasky.org/solar-system/jupiter-callisto.html</item>
+        <item>saturn|http://www.seasky.org/solar-system/saturn.html</item>
+        <item>mimas|http://www.seasky.org/solar-system/saturn-mimas.html</item>
+        <item>enceladus|http://www.seasky.org/solar-system/saturn-enceladus.html</item>
+        <item>tethys|http://www.seasky.org/solar-system/saturn-tethys.html</item>
+        <item>dione|http://www.seasky.org/solar-system/saturn-dione.html</item>
+        <item>rhea|http://www.seasky.org/solar-system/saturn-rhea.html</item>
+        <item>titan|http://www.seasky.org/solar-system/saturn-titan.html</item>
+        <item>iapetus|http://www.seasky.org/solar-system/saturn-iapetus.html</item>
+        <item>uranus|http://www.seasky.org/solar-system/uranus.html</item>
+        <item>miranda|http://www.seasky.org/solar-system/uranus-miranda.html</item>
+        <item>ariel|http://www.seasky.org/solar-system/uranus-ariel.html</item>
+        <item>umbriel|http://www.seasky.org/solar-system/uranus-umbriel.html</item>
+        <item>titania|http://www.seasky.org/solar-system/uranus-titania.html</item>
+        <item>oberon|http://www.seasky.org/solar-system/uranus-oberon.html</item>
+        <item>neptune|http://www.seasky.org/solar-system/neptune.html</item>
+        <item>triton|http://www.seasky.org/solar-system/neptune-triton.html</item>
+        <item>pluto|http://www.seasky.org/solar-system/pluto-charon.html</item>
+        <item>charon|http://www.seasky.org/solar-system/pluto-charon.html</item>
     </string-array>
 </resources>
