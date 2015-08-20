@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fibonacci</string>
+    <string name="question"><b>Please enter the highest index of the Fibonnaci numbers you would like to be calculated and displayed.</b></string>
+    <string name="conversion_err">Invalid value! Please enter an integer.</string>
+    <string name="negative_err">Negative value! Please enter a positive integer.</string>
+    <string name="again">AGAIN !</string>
+    <string name="calculate">CALCULATE !</string>
+</resources>
