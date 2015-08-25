@@ -1,6 +1,10 @@
 package com.thehackerati.fibonacci;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +27,13 @@ public class MainActivity extends Activity {
             viewQ;
     private EditText edtText;
     private ListView lvFibonacci;
+    private SQLiteDatabase dbHack;
 
+    // create DB and table, if needed
+    private void createDB() {
+        dbHack=openOrCreateDatabase("HackeratiDB", Context.MODE_PRIVATE, null);
+        dbHack.execSQL("CREATE TABLE IF NOT EXISTS fibonacci(fib_no VARCHAR);");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +54,16 @@ public class MainActivity extends Activity {
 
         // set the EditText control
         edtText = (EditText) findViewById(R.id.no_fibonacci);
+
+        // set the DB component
+        createDB();
     }
 
     // calculate the fibonacci sequence
-    private void calculate_fib(int length) {
+    private List<String> calculate_fib(int length) {
 
         BigInteger first, second, result;
-
         List<String> listFibonacci;
-        FibonacciAdapter fibonacciAdapter;
 
         // declare the array
         String[] fibonacci_array = new String[length+1];
@@ -68,7 +79,44 @@ public class MainActivity extends Activity {
                 fibonacci_array[i] = result.toString();
             }
         }
+
         listFibonacci = Arrays.asList(fibonacci_array);
+        return listFibonacci;
+    }
+
+    // delete all existing data from the DB
+    private void deleteDB() {
+        dbHack.execSQL("DELETE FROM fibonacci");
+    }
+
+    // write the fibonacci sequence to the DB
+    private void writeDB(List<String> fib_list) {
+        for(int i = 0; i < fib_list.size(); i++)
+        {
+            ContentValues initialValues = new ContentValues();
+            initialValues.put("fib_no", fib_list.get(i));
+            dbHack.insert("fibonacci", null, initialValues);
+        }
+    }
+
+    // read the fibonacci sequence from the DB to a String list
+    private List<String> readDB() {
+        List<String> listFibonacci = new ArrayList<String>();
+        Cursor cur = dbHack.rawQuery("SELECT * FROM fibonacci", null);
+        if (cur.moveToFirst()) {
+            while (!cur.isAfterLast()) {
+                String fib_no = cur.getString(cur.getColumnIndex("fib_no"));
+                listFibonacci.add(fib_no);
+                cur.moveToNext();
+            }
+        }
+        cur.close();
+        return listFibonacci;
+    }
+
+    // set the list view
+    private void setListView(List<String> listFibonacci) {
+        FibonacciAdapter fibonacciAdapter;
 
         // create and set an adapter
         fibonacciAdapter = new FibonacciAdapter(listFibonacci);
@@ -98,7 +146,11 @@ public class MainActivity extends Activity {
                     } else {
                         viewA.setVisibility(View.VISIBLE);
                         viewQ.setVisibility(View.INVISIBLE);
-                        calculate_fib(max_fib);
+                        List<String> fib_list = calculate_fib(max_fib);
+                        deleteDB();
+                        writeDB(fib_list);
+                        List<String> listFibonacci = readDB();
+                        setListView(listFibonacci);
                     }
                 } catch (NumberFormatException e) {
                     Toast.makeText(getApplicationContext(), R.string.conversion_err, Toast.LENGTH_SHORT).show();
