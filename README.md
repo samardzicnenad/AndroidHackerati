@@ -25,3 +25,9 @@ When the item is pressed, the app opens the page for that celestial body in the 
 I have used both images and the pages from http://www.seasky.org.
 
 <b>04) Fibonacci</b> - An example of database usage
+
+Fibonacci application takes as an input a positive (including 0) integer which represents the highest index of the Fibonacci number in a sequence you would like to get displayed (0th element is 0; 1st element is 1, 2nd element is 1; etc).
+
+When the "CALCULATE!" button is clicked, the app deletes all of the existing records from the DB table, calculates a Fibonacci sequence; writes it to a DB and then reads it back and displays it to the user. This needless set of steps is performed every time in order to illustrate CRUD opperations in Android.
+
+DB platform is SQLite; DB name is 'HackeratiDB'; DB table name is 'fibonacci' and it has only one VARCHAR column named 'fib_no'.
