@@ -2,6 +2,7 @@ package com.thehackerati.threecardmonte;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -53,10 +54,17 @@ public class MainActivity extends Activity {
     }
 
     // Show the selected card
-    private void showCard(int cardWeight) {
+    private void showCard() {
         Intent launchComIntent = new Intent(this, CardFace.class);
-        launchComIntent.putExtra("requestCode", cardWeight);
         startActivityForResult(launchComIntent, GAME_SIGNAL);
+    }
+
+    // Save the shared preference - card value
+    private void savePreference(String shared_pref_key, String pref_key, int value) {
+        SharedPreferences sharedPreferences = getSharedPreferences(shared_pref_key, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(pref_key, value);
+        editor.commit();
     }
 
     // Set onClick actions
@@ -67,7 +75,8 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     int btnIndex = cardsList.indexOf(cardElement);
-                    showCard(cardList.get(btnIndex));
+                    savePreference(getString(R.string.shared_pref_key), getString(R.string.pref_key), cardList.get(btnIndex));
+                    showCard();
                 }
             });
         }
