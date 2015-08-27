@@ -14,6 +14,8 @@ The app shuffles the cards and shows the card face when a card back is pressed. 
 
 I've considered implementing a 'hustle mode' which doesn't allow you to win, but this is left as an improvement for one of the future versions. You're safe ;) !
 
+UPDATE: version 2 uses SharedPreferences instead of Extras to communicate between the activities.
+
 <b>03) Solar ListView</b> - Using a custom adapter to build a ListView of the Solar system celestial bodies
 
 The application groups the Solar system planets together with their moons, randomizes the position of the group in the list and randomizes the background color of the group.
@@ -31,3 +33,5 @@ Fibonacci application takes as an input a positive (including 0) integer which r
 When the "CALCULATE!" button is clicked, the app deletes all of the existing records from the DB table, calculates a Fibonacci sequence; writes it to a DB and then reads it back and displays it to the user. This needless set of steps is performed every time in order to illustrate CRUD opperations in Android.
 
 DB platform is SQLite; DB name is 'HackeratiDB'; DB table name is 'fibonacci' and it has only one VARCHAR column named 'fib_no'.
+
+In order for app to be able to calculate any Fibonacci number and avoid type overflow, I cast Strings to BigIntegers, perform the addition and then cast the result back to String.
