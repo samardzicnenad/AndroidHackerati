@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
         SharedPreferences sharedPreferences = getSharedPreferences(shared_pref_key, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(pref_key, value);
-        editor.commit();
+        editor.apply();
     }
 
     // Set onClick actions
