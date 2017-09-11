@@ -1,4 +1,4 @@
-package com.thehackerati.threecardmonte;
+package com.samardzicnenad.threecardmonte;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -102,6 +102,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        randomizeCards();
         setupListeners();
     }
 }

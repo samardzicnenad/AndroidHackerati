@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
         // create a shuffled list of (sun and) planets
         Resources res = getResources();
         listSunPlanets = Arrays.asList(res.getStringArray(R.array.sun_planets));
-        Collections.shuffle(listSunPlanets);
+        //Collections.shuffle(listSunPlanets);
 
         // create HashMaps from resource String arrays and the complete list of bodies
         mapCBodyLink = createHashMap(R.array.celestial_bodies_links);

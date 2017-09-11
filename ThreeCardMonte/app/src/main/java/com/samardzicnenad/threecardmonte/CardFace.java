@@ -1,9 +1,11 @@
-package com.thehackerati.threecardmonte;
+package com.samardzicnenad.threecardmonte;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,14 +42,20 @@ public class CardFace extends Activity {
             case 12:
                 cardFace.setImageResource(R.drawable.jack);
                 message.setText("Bad luck! Try again!");
+                message.setTypeface(null, Typeface.BOLD);
+                message.setTextColor(Color.RED);
                 break;
             case 13:
                 cardFace.setImageResource(R.drawable.queen);
-                message.setText("You win!");
+                message.setText("Congrats! You win!");
+                message.setTypeface(null, Typeface.BOLD);
+                message.setTextColor(Color.parseColor("#178c44"));
                 break;
             case 14:
                 cardFace.setImageResource(R.drawable.king);
                 message.setText("Bad luck! Try again!");
+                message.setTypeface(null, Typeface.BOLD);
+                message.setTextColor(Color.RED);
                 break;
             default:
                 break;
